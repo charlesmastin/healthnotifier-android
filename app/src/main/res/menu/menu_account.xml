@@ -1,0 +1,47 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/action_edit_account"
+        android:orderInCategory="100"
+        android:title="Edit Account" />
+
+    <item
+    android:id="@+id/action_logout"
+    android:orderInCategory="101"
+    android:title="Logout" />
+
+    <item
+        android:id="@+id/action_delete_account"
+        android:orderInCategory="2000"
+        android:title="Delete Account" />
+
+
+    <!-- debug stuff, just to show all the screens n such -->
+    <!--
+    <item
+        android:id="@+id/action_debug_login"
+        android:orderInCategory="120"
+        android:title="Login" />
+
+    <item
+        android:id="@+id/action_debug_create_account"
+        android:orderInCategory="120"
+        android:title="Create Account" />
+
+    <item
+        android:id="@+id/action_debug_forgot_password"
+        android:orderInCategory="121"
+        android:title="Forgot Password" />
+
+    <item
+        android:id="@+id/action_debug_unlock_account"
+        android:orderInCategory="121"
+        android:title="Unlock Account" />
+
+    <item
+        android:id="@+id/action_debug_complete_recovery"
+        android:orderInCategory="121"
+        android:title="Complete Recovery" />
+    -->
+
+</menu>

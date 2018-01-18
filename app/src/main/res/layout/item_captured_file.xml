@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/global_metric_small"
+    android:paddingBottom="@dimen/global_metric_small">
+
+    <LinearLayout
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/ivPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/find_text_name"
+            android:textSize="@dimen/abc_text_size_caption_material"
+            android:text="File Part 1" />
+
+    </LinearLayout>
+
+    <ImageView
+    android:id="@+id/ivPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_photo" />
+
+    <!-- TODO: the delete UI on this bizzle sizzle tizzle -->
+
+</RelativeLayout>

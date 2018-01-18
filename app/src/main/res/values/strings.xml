@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Lifesquare</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <!--  -->
+    <string name="prefs_key_auth_token">auth_token</string>
+    <!-- these are not needed since our data model sucks -->
+    <string name="prefs_key_first_name">first_name</string>
+    <string name="prefs_key_last_name">last_name</string>
+    <string name="prefs_key_email">email</string>
+    <string name="prefs_key_mobile_phone">mobile_phone</string>
+    <string name="prefs_key_provider">provider</string>
+    <string name="prefs_key_provider_credential_status">provider_credential_status</string>
+    <string name="prefs_key_account_id">account_id</string>
+    <string name="prefs_key_current_patient_id">current_patient_id</string>
+    <string name="prefs_key_permissions">permissions</string>
+    <!--  -->
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <!--  -->
+
+    <string name="menu_scan_lifesquare">Scan LifeSticker</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_profiles">My Profiles</string>
+    <string name="menu_inbox">Invites</string>
+    <string name="menu_recent_scans">Recent Scans</string>
+    <string name="menu_find_lifesquare">Find LifeStickers</string>
+
+    <string name="permission_search">search</string>
+    <string name="permission_nearby">nearby</string>
+
+    <string name="err_common">Something went wrong, please try again.</string>
+
+    <string name="menu_logout">Logout</string>
+    <!--  -->
+    <string name="login_email">EMAIL</string>
+    <string name="login_password">PASSWORD</string>
+    <string name="login_log_in">Log In</string>
+    <string name="login_forgot_password">Forgot my Password</string>
+    <string name="login_invalid_credentials">Invalid Credentials</string>
+    <!--  -->
+    <string name="forgot_pass_send_reset">Send Password Reset</string>
+    <string name="forgot_pass_log_in">Log In to HealthNotifier</string>
+    <string name="forgot_pass_success">We sent you an email to reset your password. If you did not receive the email, please contact support@domain.com.</string>
+    <string name="forgot_pass_not_exist">Account with provided email address does not exist.</string>
+    <string name="forgot_pass_invalid_credentials">Invalid Credentials</string>
+    <!--  -->
+    <string name="scan_enter_code">Enter LifeSticker Code</string>
+    <string name="scan_help">Center LifeSticker inside box to scan</string>
+
+    <!--  -->
+    <string name="find_search">Search</string>
+    <string name="find_current_location">Near Current Location</string>
+    <string name="find_lifesquares">LifeStickers</string>
+    <!--  -->
+    <string name="detail_personal">PERSONAL</string>
+    <string name="detail_medical">MEDICAL</string>
+    <string name="detail_contacts">CONTACTS</string>
+    <!--  -->
+    <string name="recent_no_items">NO ITEMS</string>
+    <!--  -->
+    <string name="inbox_no_items">NO INVITES</string>
+
+    <string name="account_no_profiles">NO PROFILES</string>
+    <string name="title_activity_add_document">AddDocumentActivity</string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <string name="title_activity_provider_credentials">ProviderCredentialsActivity</string>
+    <string name="title_activity_scan">ScanActivity</string>
+
+    <!-- meh some dialogs and stuffs -->
+    <string name="dialog_delete_profile_message">Paramedics won’t be able to retrieve essential health information in an emergency. Any recurring subscriptions will be cancelled and no partial refunds will be issued. Enter \"delete\" into the text field.</string>
+    <string name="dialog_delete_account_message">All of your active LifeStickers will be disabled and you will be unable to access the web and mobile apps for this account. If you wish to proceed, please enter \"delete lifesticker\" into the confirmation field. We’re sorry to see you go.</string>
+
+    <string name="dialog_confirm_profile_message">I confirm the information entered is accurate and factual. HealthNotifier is a realtime platform and subsequent changes will be available to health care providers in times of intervention or care management.</string>
+
+</resources>

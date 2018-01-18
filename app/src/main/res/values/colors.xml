@@ -1,0 +1,72 @@
+<resources>
+
+    <!-- new stuffs -->
+    <color name="ColorPrimary">#D80319</color>
+    <color name="ColorPrimaryDark">#B10618</color>
+    <color name="ColorBlue">#337bd3</color>
+    <color name="ColorGreen">#33D3AA</color>
+    <color name="ColorStolenBlue">#1e2327</color>
+
+    <!-- 12% MF black son -->
+    <color name="MaterialDividerDark">#1f000000</color>
+    <color name="MaterialDividerLight">#1FFFFFFF</color>
+
+    <!-- SHUT IT DOWN SON -->
+
+    <color name="global_text_primary">#222</color>
+    <color name="global_text_secondary">#888</color>
+    <color name="global_text_primary_inverse">#fff</color>
+    <color name="global_text_secondary_inverse">#aaa</color>
+    <color name="global_text_accent">#33b5e5</color>
+    <color name="global_text_edittext">#ffffff</color>
+    <!--  -->
+    <color name="global_bg_back">#eee</color>
+    <color name="global_bg_front">#fff</color>
+    <color name="global_bg_dialog">#f5f5f5</color>
+    <color name="global_bg_back_inverse">#111</color>
+    <color name="global_bg_front_inverse">#222</color>
+    <color name="global_bg_dialog_inverse">#282828</color>
+    <!--  -->
+    <color name="ab_title_text">#fbfafc</color>
+    <color name="ab_subtitle_text">#222</color>
+    <color name="ab_button_text">#222</color>
+    <color name="ab_popup_text">#222</color>
+    <color name="ab_popup_divider">#ddd</color>
+    <color name="ab_dropdown_text">#222</color>
+    <color name="ab_dropdown_selected_text">#222</color>
+    <color name="ab_tab_text">#222</color>
+    <color name="ab_item_bg_pressed">#cc33b5e5</color>
+    <!--  -->
+    <color name="view_listview_divider">#b2b2b2</color>
+    <color name="view_listview_cache_color_hint">#ddd</color>
+    <color name="view_listview_item_bg_normal">#fff</color>
+    <color name="view_listview_item_bg_pressed">#ddd</color>
+    <color name="view_listview_item_bg_focused">#ccc</color>
+    <color name="view_listview_item_bg_selected">#ccc</color>
+    <!--  -->
+    <color name="drawer_bg">#e2e2e2</color>
+    <color name="drawer_item_normal">#4b4d52</color>
+    <color name="drawer_item_selected">#c4262e</color>
+    <color name="drawer_divider">#848484</color>
+    <color name="menu_item_bg_normal">#e2e2e2</color>
+	<color name="menu_item_bg_selected">#d4d4d4</color>
+    <!--  -->
+    <color name="start_bg">#c4262e</color>
+    <color name="start_text_color">#ffffff</color>
+    <color name="start_bg_selected">#bc3d44</color>
+
+	<!--  -->
+	<color name="scan_edittext_bg">#ffffff</color>
+	<color name="scan_edittext_text">#231f20</color>
+	<color name="scan_help_text">#ffffff</color>
+	<!--  -->
+	<color name="find_text_name">#231f20</color>
+	<color name="find_text_address">#6b6b6b</color>
+	<color name="find_text_info">#231f20</color>
+	<color name="find_divider">#636363</color>
+	<!--  -->
+	<color name="find_edittext_text">#231f20</color>
+	<!--  -->
+	<color name="tab_text_color">#474747</color>
+	
+</resources>

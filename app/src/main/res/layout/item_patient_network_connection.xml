@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="0dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp">
+
+    <ImageView
+        android:id="@+id/ivPatientNetworkConnectionPhoto"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_photo" />
+
+    <LinearLayout
+        android:layout_toRightOf="@+id/ivPatientNetworkConnectionPhoto"
+        android:layout_marginLeft="@dimen/global_metric_medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <!-- TODO: the Provider status Icon -->
+
+        <TextView
+            android:id="@+id/tvPatientNetworkConnectionTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:alpha="0.87"
+            android:text="Patient M. Name" />
+
+        <TextView
+            android:id="@+id/tvPatientNetworkConnectionDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#000000"
+            android:alpha="0.54"
+            android:text="Privacy Level: HealthNotifier Network" />
+
+        <!-- actions vertical menu son -->
+        <!-- F android inconsistencies na dlack of of obvious componentry for Material, such a donkey stain -->
+        <!-- really this is supposed to do a context menu, not a popup, but whatever son -->
+        <!--
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_dots"
+            android:contentDescription="Manage Connection"
+            android:onClick="showPopup" />
+        -->
+
+    </LinearLayout>
+
+</RelativeLayout>

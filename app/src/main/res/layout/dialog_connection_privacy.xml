@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    >
+
+    <!-- DONKEY DICK SLIPS -->
+    <!-- TODO: actually have the "label" select the radio button you dolt -->
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/rgConnectionPrivacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="16sp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HealthNotifier Network"
+            android:id="@+id/rbPrivacyPublic"
+            android:layout_column="0"
+            android:checked="false"
+            android:clickable="true"
+            android:visibility="visible"
+             />
+
+        <!-- DOES NOT MAKE SENSE IN CONTEXT -->
+        <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visible to registered users who scan your LifeSticker."
+            android:id="@+id/textView100"
+            android:textSize="@dimen/abc_text_size_small_material"
+            android:paddingLeft="32sp"
+            android:layout_marginTop="-8sp"
+            android:paddingRight="32sp" />
+        -->
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Authorized Viewers"
+            android:id="@+id/rbPrivacyProvider"
+            android:layout_column="0"
+            android:checked="false"
+            android:clickable="true"
+            android:visibility="visible"
+
+            android:layout_marginTop="8sp" />
+
+        <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visible to verified health care providers or select users you authorize."
+            android:id="@+id/textView101"
+            android:textSize="@dimen/abc_text_size_small_material"
+            android:paddingLeft="32sp"
+            android:layout_marginTop="-8sp"
+            android:paddingRight="32sp" />
+        -->
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Private"
+            android:id="@+id/rbPrivacyPrivate"
+            android:layout_column="0"
+            android:checked="false"
+            android:clickable="true"
+
+            android:layout_marginTop="8sp" />
+        <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Visible only to you or select users you authorize."
+            android:id="@+id/textView102"
+            android:textSize="@dimen/abc_text_size_small_material"
+            android:paddingLeft="32sp"
+            android:layout_marginTop="-8sp"
+            android:paddingRight="64sp" />
+        -->
+
+    </RadioGroup>
+
+</LinearLayout>

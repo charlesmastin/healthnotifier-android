@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.healthnotifier.healthnotifier.activity.EditProfileActivity">
+    <!-- TODO: use dynamic code to change to "Continue" during onboarding maybe -->
+    <item
+        android:id="@+id/action_save_collection_item"
+        android:orderInCategory="101"
+        android:title="Save"
+        app:showAsAction="ifRoom" />
+</menu>

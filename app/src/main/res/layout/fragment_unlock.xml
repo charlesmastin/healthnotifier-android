@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/OnColor"
+    android:background="@color/ColorPrimary" >
+
+    <!--
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/toolbar"
+        ></include>
+        -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/global_metric_large"
+        android:layout_marginRight="@dimen/global_metric_large"
+        android:layout_marginTop="@dimen/global_metric_xlarge"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                app:srcCompat="@drawable/ic_logo_horizontal"
+                tools:ignore="MissingPrefix"
+                android:contentDescription="HealthNotifier Logo" />
+
+        </LinearLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/etUnlockCode"
+                android:inputType="number"
+                android:imeOptions="actionGo"
+                android:maxLength="6"
+                android:hint="Unlock Code *" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:layout_marginLeft="4dp"
+            android:textColor="@color/global_text_edittext"
+            android:textSize="@dimen/abc_text_size_caption_material"
+            android:text="We sent you a 6 digit unlock code device via SMS."
+            android:layout_width="220dp"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginTop="16dp"
+            android:id="@+id/llInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:id="@+id/btSubmit"
+                android:gravity="center" />
+
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,78 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.healthnotifier.healthnotifier.activity.PatientActivity">
+
+    <!-- this entire menu is highly dynamic son, needs to be pruned in code -->
+    <item
+        android:id="@+id/action_continue_setup"
+        android:orderInCategory="60"
+        android:title="Continue Setup" />
+
+    <item
+        android:id="@+id/action_view_lifesquare"
+        android:orderInCategory="70"
+        android:title="View LifeSticker" />
+
+    <item
+        android:id="@+id/action_edit_profile"
+        android:orderInCategory="80"
+        android:title="Edit Personal" />
+
+    <item
+        android:id="@+id/action_edit_medical"
+        android:orderInCategory="81"
+        android:title="Edit Medical" />
+
+    <item
+        android:id="@+id/action_edit_contacts"
+        android:orderInCategory="82"
+        android:title="Edit Insurance Contacts" />
+
+    <item
+        android:id="@+id/action_edit_emergency"
+        android:orderInCategory="83"
+        android:title="Edit Emergency Contacts" />
+
+    <item
+        android:id="@+id/action_notify_emergency"
+        android:orderInCategory="84"
+        android:title="Message Emergency Contacts" />
+
+    <!-- NETWORK ON DEEZE NUTS -->
+    <item
+        android:id="@+id/action_edit_network_outbound"
+        android:orderInCategory="110"
+        android:title="Manage LifeCircle" />
+
+    <item
+        android:id="@+id/action_edit_network_inbound"
+        android:orderInCategory="111"
+        android:title="Manage Shared With Me" />
+
+    <!-- DEBUG ON YOUR NUTS -->
+    <item
+        android:id="@+id/action_checkout_assign"
+        android:orderInCategory="90"
+        android:title="Assign LifeStickers" />
+
+    <item
+        android:id="@+id/action_checkout_renew"
+        android:orderInCategory="91"
+        android:title="Renew Coverage" />
+
+    <item
+        android:id="@+id/action_checkout_replace"
+        android:orderInCategory="92"
+        android:title="Order Replacement Stickers" />
+
+    <item
+        android:id="@+id/action_advise_me"
+        android:orderInCategory="102"
+        android:title="Advise Me" />
+
+    <item
+        android:id="@+id/action_delete_profile"
+        android:orderInCategory="2000"
+        android:title="Delete Profile" />
+
+</menu>

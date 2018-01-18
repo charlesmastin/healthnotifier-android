@@ -1,0 +1,493 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.healthnotifier.healthnotifier.fragment.CheckoutFragment"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/toolbar"
+        ></include>
+
+    <!-- does not work in CoordinatorLayout android:layout_below="@+id/my_toolbar" -->
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true" >
+
+        <LinearLayout
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:paddingTop="3dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/global_bg_back"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:id="@+id/llJW"
+            android:clickable="false"
+            android:contextClickable="false">
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/cardAssign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="4dp"
+                android:layout_margin="5dp">
+
+            <LinearLayout
+                android:id="@+id/llCheckoutAssign"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="Assign LifeStickers"
+                    android:textSize="@dimen/abc_text_size_large_material"
+                    />
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="I need LifeStickers"
+                        android:id="@+id/rbCheckoutProvision"
+                        android:layout_column="0"
+                        android:checked="false"
+                        android:clickable="true" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="I already have LifeStickers"
+                        android:id="@+id/rbCheckoutClaim"
+                        android:layout_column="0"
+                        android:checked="false"
+                        android:clickable="true" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llCheckoutLifesquareValidated"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ivCheckoutLifesquareValidated"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp" />
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="8dp"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        android:id="@+id/tvCheckoutLifesquareValidated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/cardShipping"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="4dp"
+                android:layout_margin="5dp">
+            <LinearLayout
+                android:id="@+id/llCheckoutShipping"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shipping Details"
+                    android:textSize="@dimen/abc_text_size_large_material"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="@color/ab_button_text"
+                    android:text="Address"
+                    android:id="@+id/tvCheckoutAddress"
+                    android:textSize="@dimen/abc_text_size_caption_material"
+                    />
+                <android.widget.Spinner
+                    android:id="@+id/spCheckoutAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your LifeStickers will be sent to…"
+                    android:id="@+id/tvCheckoutShippingSummary"
+                    android:textSize="@dimen/abc_text_size_small_material"
+                    />
+
+            </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/cardSubscription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="4dp"
+                android:layout_margin="5dp">
+
+            <LinearLayout
+                android:id="@+id/llCheckoutSubscription"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subscription"
+                    android:textSize="@dimen/abc_text_size_large_material"
+                    />
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Auto-renew coverage"
+                    android:checked="true"
+                    android:id="@+id/cbCheckoutSubscription" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your card will be charged annually to ensure your coverage is always active. You may cancel at any time."
+                    android:id="@+id/tvCheckoutSubscriptionMeta"
+                    android:textSize="@dimen/abc_text_size_small_material"
+                    />
+            </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/cardPromoCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="4dp"
+                android:layout_margin="5dp">
+
+            <LinearLayout
+                android:id="@+id/llCheckoutPromo"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Promotional Sign Up Code"
+                    android:textSize="@dimen/abc_text_size_large_material"
+                    />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+                        <EditText
+                            android:id="@+id/etCheckoutPromoCode"
+                            android:layout_width="144sp"
+                            android:layout_height="wrap_content"
+                            android:hint="Code"
+                            android:inputType="textCapCharacters|textNoSuggestions"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <ImageView
+                        android:layout_marginTop="22dp"
+                        android:id="@+id/ivPromoStatus"
+                        app:srcCompat="@drawable/ic_check_circle_black_24dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Plan Level -->
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/cardPlanLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="4dp"
+            android:layout_margin="5dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Plan Level"
+                android:textSize="@dimen/abc_text_size_large_material"
+                />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Personal"
+                    android:id="@+id/rbCheckoutPlanPersonal"
+                    android:layout_column="0"
+                    android:checked="true"
+                    android:clickable="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="16dp"
+                    android:text="-Your health care information moves with you.\n-Critical health information is accessible to others with assigned viewing privileges in times of need.\n-Online support."
+                    android:id="@+id/tvPersonalMeta"
+                    android:textSize="@dimen/abc_text_size_small_material"
+                    />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enterprise"
+                    android:id="@+id/rbCheckoutPlanEnterprise"
+                    android:layout_column="0"
+                    android:checked="false"
+                    android:clickable="false" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="32dp"
+                    android:text="Contact enterprise@domain.com for more information."
+                    android:id="@+id/tvEnterpriseMeta"
+                    android:textSize="@dimen/abc_text_size_small_material"
+                    />
+
+            </RadioGroup>
+            </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- TODO put in fixed full bleed guy up top SON, or in title -->
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/cardAmountDue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="4dp"
+                android:layout_margin="5dp">
+            <LinearLayout
+                android:id="@+id/llCheckoutTotal"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Amount Due"
+                    android:textSize="@dimen/abc_text_size_large_material"
+                    android:layout_marginBottom="8dp"
+                    />
+                <TextView
+                    android:id="@+id/tvCheckoutTotalDue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$25.00"
+                    android:textSize="@dimen/abc_text_size_medium_material"
+                    />
+            </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/cardPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="4dp"
+                android:layout_margin="5dp">
+            <LinearLayout
+                android:id="@+id/llCheckoutPayment"
+                android:padding="16dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Payment Details"
+                    android:textSize="@dimen/abc_text_size_large_material"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Credit Card"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="@color/ab_button_text"
+                    android:id="@+id/tvCheckoutCC"
+                    android:textSize="@dimen/abc_text_size_caption_material"
+                    />
+                <android.widget.Spinner
+                    android:id="@+id/spCheckoutCC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btCheckoutAddCard"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:text="Add Payment Method"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- new card inline form son buns -->
+
+                <LinearLayout
+                    android:id="@+id/llCheckoutPaymentCardForm"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <EditText
+                            android:id="@+id/etCheckoutFormCardNumber"
+                            android:layout_width="240sp"
+                            android:layout_height="wrap_content"
+                            android:hint="Card Number"
+                            android:maxLength="19"
+                            android:inputType="number"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:textColor="@color/ab_button_text"
+                        android:text="Expiration"
+                        android:textSize="@dimen/abc_text_size_caption_material"
+                        />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <android.widget.Spinner
+                            android:id="@+id/spCheckoutFormExpirationMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="/"
+                            android:textSize="@dimen/abc_text_size_caption_material"
+                            />
+
+                        <android.widget.Spinner
+                            android:id="@+id/spCheckoutFormExpirationYear"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <EditText
+                            android:id="@+id/etCheckoutFormCVC"
+                            android:layout_width="96sp"
+                            android:layout_height="wrap_content"
+                            android:hint="CVC"
+                            android:maxLength="4"
+                            android:inputType="number"/>
+                    </android.support.design.widget.TextInputLayout>
+
+
+                    <!-- payment info son -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HealthNotifier uses Stripe to securely process your payments. Your billing details are never stored on HealthNotifier servers and all transactions occur over SSL. Previously charged cards are made available for use from Stripe but not stored or transmitted."
+                        android:id="@+id/tvPaymentMeta"
+                        android:textSize="@dimen/abc_text_size_small_material"
+                        />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+    </ProgressBar>
+
+</android.support.design.widget.CoordinatorLayout>

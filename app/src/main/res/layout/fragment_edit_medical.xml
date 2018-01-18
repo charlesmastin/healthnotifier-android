@@ -1,0 +1,217 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.healthnotifier.healthnotifier.fragment.EditMedicalFragment"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:id="@+id/cl1"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/toolbar"
+        ></include>
+
+    <!-- does not work in CoordinatorLayout android:layout_below="@+id/my_toolbar" -->
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:id="@+id/llJW"
+            android:clickable="false"
+            android:contextClickable="false">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Directives"
+                android:id="@+id/tvMedicalSection0"
+                android:textSize="@dimen/abc_text_size_large_material"
+                />
+            <ListView
+                android:id="@+id/lvDirectives"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/view_listview_divider"></ListView>
+            </LinearLayout>
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Medications"
+                android:id="@+id/tvMedicalSection1"
+                android:textSize="@dimen/abc_text_size_large_material"
+                />
+            <ListView
+                android:id="@+id/lvMedications"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/view_listview_divider"></ListView>
+            </LinearLayout>
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Allergies"
+                android:id="@+id/tvMedicalSection2"
+                android:textSize="@dimen/abc_text_size_large_material"
+                />
+            <ListView
+                android:id="@+id/lvAllergies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/view_listview_divider"></ListView>
+            </LinearLayout>
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conditions"
+                android:id="@+id/tvMedicalSection3"
+                android:textSize="@dimen/abc_text_size_large_material"
+                />
+            <ListView
+                android:id="@+id/lvConditions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/view_listview_divider"></ListView>
+            </LinearLayout>
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Procedures &amp; Devices"
+                android:id="@+id/tvMedicalSection4"
+                android:textSize="@dimen/abc_text_size_large_material"
+                />
+            <ListView
+                android:id="@+id/lvProcedures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/view_listview_divider"></ListView>
+            </LinearLayout>
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Immunizations"
+                android:id="@+id/tvMedicalSection5"
+                android:textSize="@dimen/abc_text_size_large_material"
+                />
+            <ListView
+                android:id="@+id/lvImmunizations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/view_listview_divider"></ListView>
+            </LinearLayout>
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Documents"
+                android:id="@+id/tvMedicalSection6"
+                android:textSize="@dimen/abc_text_size_large_material"
+                />
+            <ListView
+                android:id="@+id/lvDocuments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/view_listview_divider"></ListView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+    </ProgressBar>
+
+</android.support.design.widget.CoordinatorLayout>

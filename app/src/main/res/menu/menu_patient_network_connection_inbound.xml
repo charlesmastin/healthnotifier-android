@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_patient_network_view_lifesquare"
+        android:orderInCategory="100"
+        android:title="View LifeSticker" />
+
+    <item
+        android:id="@+id/action_patient_network_leave"
+        android:orderInCategory="100"
+        android:title="Leave LifeCircle" />
+</menu>

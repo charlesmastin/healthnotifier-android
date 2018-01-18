@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.healthnotifier.healthnotifier">
+
+    <!-- versions and shiz in build.gradle -->
+    <!--
+    android:versionCode="13"
+    android:versionName="1.4.0"
+    -->
+    <!-- SDK min/target in build.gradle -->
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- SD CARD SON -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- this is so bum son -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <!-- coarse enough for providers, ish, fine is really needed for accurate consumer PERS -->
+    <!-- but consider dropping this -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+
+    <application
+        android:name=".HealthNotifierApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:logo="@drawable/ic_actionbar"
+        android:theme="@style/HealthNotifierTheme">
+
+        <service android:name=".fcm.InstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".fcm.MessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/icon_notification" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/ColorPrimary" />
+
+        <provider
+            android:name=".provider.HealthNotifierFileProvider"
+            android:authorities="com.healthnotifier.healthnotifier.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.RegistrationActivity"
+            android:parentActivityName=".activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- no navigation except forward or onscreen -->
+        <activity
+            android:name=".activity.ForgotPasswordActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible" />
+        <!-- TODO: soft input??? -->
+        <activity
+            android:name=".activity.UnlockActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name=".activity.CompleteRecoveryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateVisible" />
+        <activity
+            android:name=".activity.EditAccountActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PatientActivity"
+            android:launchMode="singleTask"
+            android:parentActivityName=".activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <!-- this parent is many things -->
+        <activity
+            android:name=".activity.EditCollectionItemActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- parent can be patient activity, scan activity, history activity -->
+        <activity
+            android:name=".activity.LifesquareActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.EditProfileActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- during onboarding going back is actually going to edit profile, otherwise Patient -->
+        <activity
+            android:name=".activity.EditMedicalActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- during onboarding going back is actually going to edit medical, otherwise Patient -->
+        <activity
+            android:name=".activity.EditContactsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- during onboarding going back is actually going to edit contacts, otherwise Patient -->
+        <activity
+            android:name=".activity.EditEmergencyActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- we can deal with this always going back to Patient -->
+        <activity
+            android:name=".activity.NotifyEmergencyContactsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PatientNetworkManageActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.PatientNetworkSearchActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CheckoutActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CaptureLifesquareActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CaptureLicenseActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ProviderCredentialsActivity"
+            android:launchMode="singleTask"
+            android:parentActivityName=".activity.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- this either goes back to the LifeSticker view, or in the future, the approprate profile edit, blabla -->
+        <activity
+            android:name=".activity.DocumentViewerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.EditDocumentActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CareplansActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- android:launchMode="singleTask" -->
+        <activity
+            android:name=".activity.CareplanQuestionGroupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CareplanRecommendationActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="f8ef45d317174557e81b63277530f4c8cbf031fd" />
+        <!-- TODO: bump this beast up -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+    </application>
+
+</manifest>

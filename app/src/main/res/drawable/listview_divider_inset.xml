@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset xmlns:android="http://schemas.android.com/apk/res/android"
+    android:insetLeft="80dp"
+    android:insetRight="0dp" >
+    <!-- 72 is spec, but we made a slightly larger avatar, lul -->
+
+    <shape
+        android:shape="line" >
+        <stroke
+            android:dashGap="1dp"
+            android:dashWidth="1.5dp"
+            android:width="1dp"
+            android:color="#0F000000" />
+        <!-- http://www.dtp-aus.com/hexadeci.htm -->
+
+        <size android:height="1dp" />
+
+    </shape>
+
+</inset>

@@ -1,0 +1,580 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.healthnotifier.healthnotifier.fragment.EditProfileFragment"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/my_toolbar"
+        layout="@layout/toolbar"
+        ></include>
+
+    <!-- does not work in CoordinatorLayout android:layout_below="@+id/my_toolbar" -->
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:id="@+id/llJW"
+            android:clickable="false"
+            android:contextClickable="false">
+
+            <LinearLayout
+                android:background="@color/ColorStolenBlue"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                    <!--
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Profile Photo"
+                        android:id="@+id/tvProfileSection0"
+                        android:textSize="@dimen/abc_text_size_large_material"
+                        />
+                        -->
+
+                    <ImageView
+                        android:id="@+id/ivProfilePhoto"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:src="@drawable/ic_add_a_photo_black_48dp"
+                        tools:ignore="MissingPrefix"
+                        android:contentDescription="Add A Photo"
+                        android:clickable="true"
+                        android:longClickable="true"
+                        android:layout_gravity="center_horizontal" />
+
+                    <TextView
+                        android:id="@+id/tvPhotoHelp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/global_text_secondary"
+                        android:textSize="@dimen/abc_text_size_caption_material"
+                        android:text="Tap to replace with a new photo, or long press to remove."
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:layout_gravity="center_horizontal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llLicenseImporter"
+                android:background="@color/ColorBlue"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Profile Photo"
+                    android:id="@+id/tvProfileSection0"
+                    android:textSize="@dimen/abc_text_size_large_material"
+                    />
+                    -->
+
+                <ImageView
+                    android:id="@+id/ivLicensePhoto"
+                    android:layout_width="168dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center_horizontal"
+                    android:clickable="true"
+                    android:contentDescription="Import from License"
+                    android:longClickable="true"
+                    android:src="@drawable/uslicense"
+                    tools:ignore="MissingPrefix" />
+
+                <TextView
+                    android:id="@+id/tvLicenseHelp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/global_text_primary_inverse"
+                    android:textSize="@dimen/abc_text_size_caption_material"
+                    android:text="Save time and import data from your U.S. Driver’s license."
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal" />
+            </LinearLayout>
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!--
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Basics"
+                    android:textSize="@dimen/abc_text_size_large_material"
+                    />
+                    -->
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <EditText
+                            android:id="@+id/etProfileFirstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="First Name *"
+                            android:inputType="textCapWords|textNoSuggestions"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <EditText
+                            android:id="@+id/etProfileMiddleName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Middle Name"
+                            android:inputType="textCapWords|textNoSuggestions"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <EditText
+                            android:id="@+id/etProfileLastName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Last Name *"
+                            android:maxLines="1"
+                            android:inputType="textCapWords|textNoSuggestions"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <EditText
+                            android:id="@+id/etProfileSuffix"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Suffix"
+                            android:inputType="textCapWords|textNoSuggestions"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+                        <EditText
+                            android:id="@+id/etProfileBirthdate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Date of Birth *"
+                            android:focusable="false"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <!-- organ donor switch -->
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Organ Donor"
+                        android:id="@+id/cbOrganDonor"
+                        android:layout_marginTop="16sp" />
+                </LinearLayout>
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                    <!-- DEMOGRAPHICS -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:text="Demographics"
+                        android:id="@+id/tvProfileSection1"
+                        android:textSize="@dimen/abc_text_size_large_material"
+                        />
+                    <!-- as select son -->
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:textColor="@color/ab_button_text"
+                            android:text="Privacy *"
+                            android:id="@+id/tvProfileDemographicsPrivacy"
+                            android:textSize="@dimen/abc_text_size_caption_material"
+                            />
+                        <android.widget.Spinner
+                            android:gravity="left"
+                            android:paddingLeft="0dp"
+                            android:id="@+id/spProfileDemographicsPrivacy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:textColor="@color/ab_button_text"
+                            android:text="Gender"
+                            android:id="@+id/tvProfileGender"
+                            android:textSize="@dimen/abc_text_size_caption_material"
+                            />
+                        <android.widget.Spinner
+                            android:id="@+id/spProfileGender"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <!-- margin top and bottom -->
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:textColor="@color/ab_button_text"
+                            android:text="Race"
+                            android:id="@+id/tvProfileEthnicity"
+                            android:textSize="@dimen/abc_text_size_caption_material"
+                            />
+                        <android.widget.Spinner
+                            android:id="@+id/spProfileEthnicity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <!-- BIOMETRICS -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Biometrics"
+                android:id="@+id/tvProfileSection2"
+                android:textSize="@dimen/abc_text_size_large_material"
+                />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="@color/ab_button_text"
+                    android:text="Privacy *"
+                    android:id="@+id/tvProfileBiometricsPrivacy"
+                    android:textSize="@dimen/abc_text_size_caption_material"
+                    />
+                <android.widget.Spinner
+                    android:id="@+id/spProfileBiometricsPrivacy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="@color/ab_button_text"
+                    android:text="Hair Color"
+                    android:id="@+id/tvProfileHairColor"
+                    android:textSize="@dimen/abc_text_size_caption_material"
+                    />
+                <android.widget.Spinner
+                    android:id="@+id/spProfileHairColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="@color/ab_button_text"
+                    android:text="Eye Color"
+                    android:id="@+id/tvProfileEyeColor"
+                    android:textSize="@dimen/abc_text_size_caption_material"
+                    />
+                <android.widget.Spinner
+                    android:id="@+id/spProfileEyeColor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="@color/ab_button_text"
+                    android:text="Height"
+                    android:id="@+id/tvProfileHeight"
+                    android:textSize="@dimen/abc_text_size_caption_material"
+                    />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <android.widget.Spinner
+                    android:id="@+id/spProfileHeightFeet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <android.widget.Spinner
+                    android:id="@+id/spProfileHeightInches"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                    </LinearLayout>
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                <EditText
+                    android:id="@+id/etProfileWeight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Weight (lbs)"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:textColor="@color/ab_button_text"
+                    android:text="Blood Type"
+                    android:id="@+id/tvProfileBloodType"
+                    android:textSize="@dimen/abc_text_size_caption_material"
+                    />
+                <android.widget.Spinner
+                    android:id="@+id/spProfileBloodType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                <EditText
+                    android:id="@+id/etProfileBPSystolic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="BP Systolic"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                <EditText
+                    android:id="@+id/etProfileBPDiastolic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="BP Diastolic"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                <EditText
+                    android:id="@+id/etProfilePulse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pulse"
+                    android:inputType="number" />
+            </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!-- ADDRESSES COLLECTION SON -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Addresses"
+                    android:id="@+id/tvProfileSection4"
+                    android:textSize="@dimen/abc_text_size_large_material"
+                    />
+
+                <!-- 0 .. N -->
+                <ListView
+                    android:id="@+id/lvProfileAddresses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@color/view_listview_divider"></ListView>
+
+            </LinearLayout>
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <!-- LANGUAGES COLLECTION SON -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spoken Languages"
+                android:id="@+id/tvProfileSection3"
+                android:textSize="@dimen/abc_text_size_large_material"
+                />
+
+            <!-- 0 .. N -->
+            <ListView
+                android:id="@+id/lvProfileLanguages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@color/view_listview_divider"></ListView>
+
+            </LinearLayout>
+
+
+            <include layout="@layout/divider_fullbleed"></include>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discoverability"
+                android:layout_marginBottom="12dp"
+                android:id="@+id/tvProfileSection5"
+                android:textSize="@dimen/abc_text_size_large_material"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Discoverable"
+                android:id="@+id/cbSearchable" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A Discoverable profile allows licensed medical professionals (like 911-responders) to search for LifeStickers in the vicinity of an address. It also enables family, friends, and care providers to connect with you on HealthNotifier."
+                android:id="@+id/tvProfileDiscoverable"
+                android:textSize="@dimen/abc_text_size_small_material"
+                />
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <include
+        android:id="@+id/bsMediaCapture"
+        layout="@layout/bottomsheet_mediacapture"
+        ></include>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:visibility="gone"
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+    </ProgressBar>
+
+</android.support.design.widget.CoordinatorLayout>

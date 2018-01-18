@@ -1,0 +1,158 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+        jcenter()
+    }
+
+    dependencies {
+        // The Fabric Gradle plugin uses an open ended version to react
+        // quickly to Android tooling updates
+        classpath 'io.fabric.tools:gradle:1.+'
+        classpath 'io.realm:realm-gradle-plugin:3.7.2'
+        //classpath 'me.tatarka:gradle-retrolambda:3.7.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url "https://maven.google.com"
+        }
+    }
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+apply plugin: 'realm-android'
+// apply plugin: 'me.tatarka.retrolambda'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://maven.fabric.io/public' }
+    jcenter()
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+
+
+    // http://devdeeds.com/auto-increment-build-number-using-gradle-in-android/
+    def versionPropsFile = file('version.properties')
+    def versionBuild
+
+    if(versionPropsFile.canRead()){
+        def Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+        versionBuild = versionProps['VERSION_BUILD'].toInteger()
+    } else {
+        throw new FileNotFoundException("Unable to read version.properties")
+    }
+
+    ext.autoIncrementBuildNumber = {
+        if(versionPropsFile.canRead()){
+            def Properties versionProps = new Properties()
+            versionProps.load(new FileInputStream(versionPropsFile))
+            versionBuild = versionProps['VERSION_BUILD'].toInteger() + 1
+            versionProps['VERSION_BUILD'] = versionBuild.toString()
+            versionProps.store(versionPropsFile.newWriter(), null)
+        } else {
+            throw new FileNotFoundException("Unable to read version.properties")
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.healthnotifier.healthnotifier"
+        minSdkVersion 19 // 16 15
+        targetSdkVersion 26 // consider lowering this based on problems with SD/internal storage for camera ops as per
+        // https://stackoverflow.com/questions/38200282/android-os-fileuriexposedexception-file-storage-emulated-0-test-txt-exposed
+        versionCode versionBuild
+        versionName "1.0.0"
+        vectorDrawables.useSupportLibrary = true
+        /*
+        jackOptions {
+            enabled true
+        }
+        */
+
+        // inject the variables now
+        def keysPropsFile = file('keys.properties')
+        if(keysPropsFile.canRead()){
+            def Properties keysProps = new Properties()
+            keysProps.load(new FileInputStream(keysPropsFile))
+            // should we iterate meh, it doesn't do it automagically, ugg son
+            // http://stackoverflow.com/questions/17370233/use-a-custom-properties-file
+            keysProps.each { key, val ->
+                buildConfigField "String", key.toUpperCase(), "\"" + val +"\""
+            }
+            // buildConfigField "String", "LSQ_RELEASE_API_HMAC", "\"" + keysProps.getProperty("lsq_api_release_hmac") +"\""
+        } else {
+            throw new FileNotFoundException("No keys.properties found")
+        }
+
+        // multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    gradle.taskGraph.whenReady { taskGraph ->
+        if (taskGraph.hasTask(assembleDebug)){
+            autoIncrementBuildNumber()
+        } else if (taskGraph.hasTask(assembleRelease)) {
+            autoIncrementBuildNumber()
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/maven/com.belerweb/pinyin4j/pom.xml'
+        exclude 'META-INF/maven/com.belerweb/pinyin4j/pom.properties'
+        // meh zone http://stackoverflow.com/questions/41845375/how-to-solve-a-duplicate-file-exception-in-android
+        exclude 'META-INF/LICENSE'
+    }
+}
+
+dependencies {
+    // compile 'com.android.support:multidex:1.0.1'
+    compile 'io.realm:android-adapters:2.1.0'
+    compile 'com.google.android.gms:play-services-location:11.4.2'
+    compile 'com.google.firebase:firebase-messaging:11.4.2'
+    compile 'com.android.support:support-compat:26.1.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:design:26.1.0' // 26 is out!!!
+
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    compile 'com.android.support:cardview-v7:26.1.0'
+
+    compile 'com.journeyapps:zxing-android-embedded:3.5.0@aar'
+    compile 'com.google.zxing:core:3.3.0'
+
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
+        transitive = true;
+    }
+    compile 'io.keen:keen-client-api-java:5.2.0'
+    compile 'io.keen:keen-client-api-android:5.2.0@aar' //3.0.0
+    compile 'com.squareup:otto:1.3.8'
+    compile 'com.squareup.okhttp3:okhttp:3.7.0'
+    compile 'com.stripe:stripe-android:2.0.2'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.auth0.android:jwtdecode:1.1.1'
+
+}
+
+// they really meant it - at the bottom, fun times
+apply plugin: 'com.google.gms.google-services' // want just the FCM component LAME!

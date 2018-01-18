@@ -1,0 +1,46 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="LifesquareTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/ColorBlue</item>
+        <item name="colorPrimary">@color/ColorPrimary</item>
+        <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
+
+        <item name="android:textColorHint">@color/ab_button_text</item>
+    </style>
+
+    <!-- wtf son -->
+
+    <!-- TOOD: learn how to JW the theme definition on a containing Layout element
+        That way we could, you know cascade that bizzle without all the definition on the UI elements
+    -->
+
+    <style name="OnColor" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="colorAccent">#FFFFFF</item>
+        <!-- button Raised specific stuffs -->
+        <!-- C10216-->
+        <item name="colorButtonNormal">#337bd3</item>
+        <item name="colorControlHighlight">#1976D2</item>
+        <!-- button Flat specific stuffs -->
+    </style>
+
+    <style name="OnColorEditText" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="colorAccent">#FFFFFF</item>
+    </style>
+
+    <style name="OnColorTextInputLayout" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="colorAccent">#FFFFFF</item>
+    </style>
+
+    <style name="OnColorButtonFlat" parent="ThemeOverlay.AppCompat.Dark">
+        <!-- TODO: tone done initial color, mmmkay -->
+    </style>
+
+    <style name="OnColorButtonRaised" parent="ThemeOverlay.AppCompat.Dark">
+        <!-- actual LifeSticker™ blue -->
+        <!--<item name="colorButtonNormal">#337BD3</item>-->
+        <!-- ghetto ass snapped from digital color meter from material spec -->
+        <item name="colorButtonNormal">#2196F3</item>
+        <!-- ghetto ass snapped from digital color meter from material spec -->
+        <item name="colorControlHighlight">#1976D2</item>
+    </style>
+
+</resources>
